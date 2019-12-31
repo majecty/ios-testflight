@@ -17,7 +17,7 @@ jobs:
         uses: maierj/fastlane-action@v1.2.0
         env:
           FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
-          FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
+          # FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
           FASTLANE_USER: ${{ secrets.FASTLANE_USER }}
           LANG: ${{ secrets.LANG }}
           LC_ALL: ${{ secrets.LC_ALL }}
