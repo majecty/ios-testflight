@@ -1,0 +1,27 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run a one-line script
+      run: echo Hello, world!
+    - name: Download ipa file
+      run: |
+        ./download    
+    - name: Fastlane Action
+      uses: maierj/fastlane-action@v1.2.0
+      with:
+        # The lane that should be executed.
+        lane: beta
+        # The relative path from the project root directory to the subdirectory where the fastlane folder is located.
+        subdirectory: . # optional
+        # The directory where Ruby gems should be installed to and cached. If a relative path is specified, it's applied relative to the location of the Gemfile, which is either the project root or the directory from the `subdirectory` parameter.
+        bundle-install-path: . # optional
+        # The action tracks usage in Firebase by default. You can disable tracking by setting this parameter to 'true'.
+        skip-tracking: true # optional
